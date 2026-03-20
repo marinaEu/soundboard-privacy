@@ -65,7 +65,7 @@ Il menù si trova in ogni pagina di Liutalab cliccando sui tre punti in alto a d
 * **Lenght units:** consigliamo di utilizzare il millimetro come unità principale di misura della lunghezza in modo da avere più precisione dopo il punto decimale.
 * **Theme:** riguarda l'aspetto della grafica, chiara o scura.
 
-![Immagine Settings e Menu Length units](images/settings_menu.png)
+![Immagine Settings e Menu Length units](images/settings.png) ![Immagine Settings e Menu Length units](images/length_units.png)
 
 ---
 
@@ -83,7 +83,7 @@ Questa seconda parte di menù "overall" si attiva cliccando "Yes" alla casella "
 * **Board ratio:** è il rapporto tra la larghezza della inner soundboard e la larghezza della board della chitarra. Tipicamente è bene impostare questo numero a un valore inferiore ad 1 anche per considerare la riduzione dello spessore dell'honeycom ai bordi.
 * **Inner soundboard material:** il legno usato nella inner soundboard può essere diverso da quello usato nella board superiore. Scegliete quello del materiale utilizzato oppure inserite il valore misurato "by measure".
 
-![Immagini della schermata Overall del programma](images/overall_menu.png)
+![Immagini della schermata Overall del programma](images/overall.png) ![Immagini della schermata Overall del programma](images/honeycomb.png)
 
 ---
 
@@ -97,8 +97,8 @@ Questa seconda parte di menù "overall" si attiva cliccando "Yes" alla casella "
     * **Height (H):** altezza in mm delle catene trapezie.
 * **Braces Material:** in Liutalab è possibile definire il materiale delle catene che può essere diverso da quello della soundboard, questo per dare la massima flessibilità progettuale al liutaio.
 
-![Immagine schema geometrico del trapezio della catena](images/braces_shape.png)
-![Immagini della schermata Braces del programma](images/braces_menu.png)
+![Immagine schema geometrico del trapezio della catena](images/brace1.png)
+![Immagini della schermata Braces del programma](images/brace2.png)
 
 ---
 
@@ -111,7 +111,7 @@ In questo menù si può gestire l'eventuale aggiunta di rinforzi in fibra di car
 * **Reinforcement thickness on min base:** è lo spessore di rinforzo incollato sopra la base minore del trapezio di larghezza pari alla larghezza della base minore del trapezio. Da notare come incollare lo spessore sulla base minore piuttosto che sulla base maggiore, sia una modalità decisamente più efficace per aumentare la rigidezza della struttura.
 * **Reinforcement thickness on each slope side:** è lo spessore di rinforzo applicato su entrambi i bordi delle catene trapezie. Questo significa che il valore di spessore che si inserisce viene automaticamente calcolato due volte su tutte le catene.
 
-![Immagine della schermata Carbon Fiber del programma](images/carbon_fiber_menu.png)
+![Immagine della schermata Carbon Fiber del programma](images/carbon.png)
 
 ---
 
@@ -123,5 +123,6 @@ In questo menù si può gestire l'eventuale aggiunta di rinforzi in fibra di car
 
 * **Suggested flexural rigidity:** Quelli indicati sono numeri di riferimento che si utilizzeranno a seconda dello strumento che si andrà a progettare. Sottolineiamo che non esiste un numero corretto di rigidezza specifico per ogni strumento perché questo numero potrebbe variare a seconda dello spessore delle corde utilizzate.
 
-![Immagine Deflection Check schema con supporto L e carico F](images/deflection_check.png)
-![Immagini della schermata Results e Reference values del programma](images/results_menu.png)
+![Immagine Deflection Check schema con supporto L e carico F](images/results1.png)
+![Immagini della schermata Results e Reference values del programma](images/results1.png)
+![Immagini della schermata Results e Reference values del programma](images/results3.png)
