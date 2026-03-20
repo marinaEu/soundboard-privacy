@@ -1,116 +1,127 @@
-# [cite_start]Liutalab - Manuale d'uso [cite: 1]
+# Liutalab - Manuale d'uso
 
 ## Introduzione
-[cite_start]L'app che stai utilizzando ha lo scopo di definire correttamente dimensioni, forma e numero di catene, ovverosia dei rinforzi incollati sotto la tavola armonica della chitarra[cite: 8]. [cite_start]Il sistema calcola inoltre lo spessore della tavola armonica considerando i legni utilizzati ed eventuali rinforzi in fibra di carbonio o altri materiali[cite: 8].
 
-All'interno di Liutalab troverai due componenti fondamentali:
-* [cite_start]Una sezione relativa alla progettazione delle parti che compongono la soundboard[cite: 9].
-* [cite_start]Una parte dedicata alla verifica strumentale della soundboard prima di essere incollata alle fasce, che permette di effettuare gli ultimi ritocchi sulle catene strutturali[cite: 9].
+L'app che stai utilizzando ha lo scopo di definire correttamente dimensioni, forma e numero di catene, ovverosia dei rinforzi incollati sotto la tavola armonica della chitarra, oltre allo spessore della stessa tavola armonica considerando i legni utilizzati ed eventuali rinforzi in fibra di carbonio o altri materiali.
 
-> [cite_start]**Nota:** Nel testo seguente si utilizzerà il nome "chitarra" per descrivere lo strumento deputato all'uso di questo applicativo[cite: 10]. [cite_start]Considera questa semplificazione un modo per identificare tutti gli strumenti acustici con piano armonico piatto e corde in tensione[cite: 10].
+All'interno di Liutalab troverai, oltre alla parte relativa alla progettazione delle parti che compongono la soundboard anche una parte dedicata alla verifica strumentale della stessa prima di essere incollata alle fasce, verifica che permette di effettuare gli ultimi ritocchi sulle catene strutturali della soundboard.
+
+Nel testo che segue spesso si utilizzerà il nome chitarra per descrivere lo strumento deputato all'uso di questo applicativo, considera questa semplificazione un modo per identificare tutti quegli strumenti a corda che assomigliano strutturalmente ad una chitarra e che possono rientrare nei parametri di progetto e verifica utilizzati in Liutalab, di fatto strumenti acustici con piano armonico piatto e corde in tensione.
 
 ---
 
 ## Cenni di statica dello strumento
-[cite_start]Prima di descrivere il programma, è utile un ripasso relativo alla statica dello strumento in relazione alle tensioni meccaniche impartite dalle corde alla soundboard[cite: 16].
 
-[cite_start]Esistono principalmente due tipi di chitarra[cite: 17]:
-* [cite_start]**Chitarra classica (corde di nylon):** Sottoposta a sollecitazioni dell'ordine di 25-35kgf[cite: 17, 18].
-* [cite_start]**Chitarra acustica (corde in metallo):** Sottoposta a sollecitazioni di 40-80kgf[cite: 17, 18].
-* [cite_start]**Altri strumenti (es. ukulele):** Prima di procedere, bisogna evincere il carico di sollecitazione in base al numero di corde, materiale e lunghezza del diapason[cite: 19].
+Prima di descrivere nel dettaglio le varie parti del programma di dimensionamento e verifica della soundboard faremo un ripasso di alcune questioni relative alla statica dello strumento chitarra in relazione alle tensioni meccaniche che le corde impartiscono alla struttura dello strumento e in particolare alla soundboard.
 
-[cite_start]La resistenza meccanica di qualsiasi struttura tensionata dipende dalla geometria della sezione e dalle caratteristiche dei materiali[cite: 25]. [cite_start]La chitarra non deve collassare sotto il carico delle corde, ma deve avere una massa mobile dell'insieme tavola-catene la più bassa possibile: tanto più leggera e mobile è la tavola, tanto più forte e bene suona[cite: 26].
+Esistono principalmente due tipi di chitarra: chitarra acustica con corde in metallo e chitarra classica con corde di nylon.
 
-[cite_start]Le grandezze strutturali di riferimento sono[cite: 31, 32]:
-* [cite_start]**Modulo di elasticità (E)** o modulo di Young[cite: 31].
-* [cite_start]**Momento di inerzia di area (I)**[cite: 31].
-* [cite_start]**Rigidezza flessionale (E*I):** Il prodotto di E e I, ed è il riferimento più importante nel dimensionamento della soundboard[cite: 32].
+Le due, dal punto di vista delle tensioni meccaniche dovute alla diversa tipologia di materiale delle corde e al loro spessore, sono sottoposte a sollecitazioni che sono dell'ordine di 25-35kgf nel caso di chitarre classiche e 40-80kgf per le acustiche.
 
-[cite_start]La condizione staticamente migliore per l'acustica prevede una rotazione del ponte di circa 1,5-2° in avanti sotto la trazione delle corde[cite: 33, 34]. [cite_start]Per ottenere ciò, la *flexural rigidity* dovrebbe essere circa 15 per le classiche e 50 per le acustiche, proporzionata al carico delle corde[cite: 37]. 
-[cite_start]Lo scopo di Liutalab è proprio il corretto dimensionamento in merito a questo valore[cite: 38].
+Nel caso di ukulele o altri strumenti specifici diversi da chitarre classiche o acustiche, prima di procedere al dimensionamento della soundboard bisogna evincere (dal numero di corde, dal materiale oltre che dalla lunghezza del diapason) il carico di sollecitazione sulla soundboard dello strumento in fase di progettazione.
 
----
+Nell'ottica di una progettazione calata sulle caratteristiche proprie dello strumento, si evince la necessità di definire dei numeri di riferimento sulla base dei quali risalire alle dimensioni più corrette dell'insieme catene-tavola armonica.
 
-## [cite_start]Utilizzo di Liutalab [cite: 39]
-[cite_start]Il programma è strutturato in quattro sottomenu[cite: 47]:
-1.  [cite_start]**Overall** [cite: 47]
-2.  [cite_start]**Braces** [cite: 47]
-3.  [cite_start]**Carbon fiber** [cite: 47]
-4.  [cite_start]**Results** [cite: 47]
+Come è noto, la resistenza meccanica di qualsiasi struttura tensionata dipende dalle caratteristiche geometriche della sezione sottoposta allo sforzo e alle caratteristiche meccaniche dei materiali di cui è composta la struttura (oltre alla tipologia di tensione, nel nostro caso statica).
 
-[cite_start]I primi tre menù definiscono le variabili necessarie al calcolo del valore E*I[cite: 48]. Modificando i valori (spessori, catene, materiali) si punta a raggiungere il valore di rigidezza obiettivo[cite: 49]. 
-*Attenzione: Questo strumento di aiuto al liutaio deve essere utilizzato con criterio e in linea con le buone pratiche[cite: 50]. [cite_start]Fai attenzione alle unità di misura (metri, centimetri, millimetri o pollici)[cite: 51].*
+La chitarra in particolare non deve collassare sotto il carico delle corde ma al tempo stesso deve avere una massa mobile dell'insieme tavola-catene la più bassa possibile, in quanto la tavola armonica vibra, e vibrando produce il suono, e tanto più leggera e mobile è, tanto più forte e bene suona.
+
+Le due grandezze che definiscono le proprietà strutturali di qualsiasi oggetto meccanicamente sollecitato sono il modulo di elasticità "E" (o modulo di Young) e il momento di inerzia di area "I".
+
+Queste due grandezze, esprimibili attraverso numeri e unità di misura specifiche, vengono mescolate assieme attraverso il loro prodotto chiamato "E*I" rigidezza flessionale o flexural rigidity che è il nostro riferimento più importante nel dimensionamento della soundboard.
+
+Riguardo le varie tipologie di incatenatura per chitarra classica e acustica e ai vari schemi di supporto della tavola armonica (vented, Xbracing, falcate, lattice, double top, V bracing, etc...) al di là del colore del suono che ogni tipologia di incatenatura imprime allo strumento e ponendoci solo sul piano del corretto dimensionamento della tavola armonica (soundboard), esiste un criterio di dimensionamento, frutto di prove e comparazioni dei massimi esperti del settore, nel quale emerge in particolare che la condizione staticamente migliore per l'acustica dello strumento è avere una rotazione del ponte sulla tavola armonica di circa 1,5-2° in avanti sotto l'azione di trazione delle corde.
+
+Per giungere a questa condizione si è visto che la cosiddetta flexural rigidity (E*I) della soundboard dovrebbe essere di circa 15 per quanto riguarda le chitarre classiche e 50 per le chitarre acustiche e comunque avere un valore proporzionato al carico strutturale dovuto alle corde a seconda dello strumento che si decide di realizzare.
+
+Lo scopo di Liutalab, l'applicazione per smartphone che andrai ad utilizzare, è infatti il corretto dimensionamento della tavola armonica in merito al valore di rigidezza flessionale.
 
 ---
 
-### [cite_start]Impostazioni Generali (Settings) [cite: 55]
-[cite_start]Il menù si trova in ogni pagina cliccando sui tre punti in alto a destra[cite: 57].
+## Utilizzo di Liutalab
 
-* [cite_start]**Length units:** Consigliamo di utilizzare il millimetro come unità principale per avere più precisione dopo il punto decimale[cite: 59].
-* **Theme:** Riguarda l'aspetto della grafica, chiara o scura[cite: 69].
+Il programma è strutturato su quattro sottomenu: Overall, Braces, Carbon fiber, Results.
 
-![Menu Settings e Length Units](images/settings_menu.png)
+I primi tre menù definiscono le variabili necessarie al calcolo del valore E*I.
 
----
+In pratica sulla base del risultato finale che intendiamo raggiungere come flexural rigidity (E*I) andremo a modificare i vari valori di spessore tavole, numero di catene, dimensioni catene, materiali, etc..., in modo da raggiungere il valore obiettivo.
 
-### OVERALL [cite: 81]
-Definisce le proprietà generali della soundboard.
+Si conviene che questo strumento di aiuto al liutaio deve essere utilizzato con criterio, consapevoli che i dati da inserire siano in linea con la buona pratica del mestiere.
 
-* [cite_start]**Board width:** Larghezza della soundboard in mm misurata 50mm sopra il ponticello[cite: 83].
-* [cite_start]**Board thickness:** Spessore della tavola armonica in mm (precisione al decimo di mm)[cite: 92].
-* **Board material:** Scegliendo il materiale, il programma applica il modulo elastico tabellare[cite: 95]. È possibile inserire il valore "by measure" se misurato sperimentalmente o evinto dalla certificazione[cite: 96].
+Si sottolinea inoltre di fare attenzione alle unità di misura utilizzate che potete impostarle in metri, centimetri, millimetri o pollici.
 
-#### Double Top con Honeycomb
-Selezionando "Yes" alla voce "Would you like to craft Double Top with honeycomb?", si attiva una seconda parte del menù[cite: 99, 102].
-* [cite_start]**Honeycomb Thickness:** Spessore in mm (al decimo di mm) del materiale (tipicamente aramidico) posto tra la tavola superiore e la *inner soundboard*[cite: 104].
-* [cite_start]**Inner soundboard thickness:** Spessore della tavola incollata sotto la board e l'honeycomb[cite: 122].
-* **Boards ratio:** Rapporto tra la larghezza della inner soundboard e la larghezza della board[cite: 125]. Tipicamente impostato a un valore inferiore a 1 per considerare la riduzione dello spessore dell'honeycomb ai bordi[cite: 126].
-* **Inner soundboard material:** Il legno usato può essere diverso da quello superiore. [cite_start]Scegli dalla lista o inserisci "by measure"[cite: 129, 130].
+Al fine di sfruttare appieno le potenzialità di Liutalab e di ottenere dei dati attendibili riguardo le misure della soundboard (sulla base della E*I obiettivo) consigliamo di attenersi a quanto specificato nelle pagine seguenti del presente manuale seguendo passo passo la descrizione sul corretto utilizzo di ogni voce di menù.
 
-![Menu Overall UI](images/overall_menu.png)
+Buon lavoro.
 
 ---
 
-### [cite_start]BRACES [cite: 151]
-Configurazione dello schema di incatenatura.
+## Uso del manuale
 
-* **Braces number:** Numero di catene con scopo strutturale (es. Xbracing = 2; Vented = 5 o 7; V type = 2; Lattice = intersezioni a 50mm sopra il ponte, tipicamente 8)[cite: 158, 159, 160].
-* [cite_start]**Average braces orientation:** Angolo di inclinazione medio rispetto alle corde (es. Xbracing 35-45°, vented 5-10°)[cite: 168, 169, 170].
-* [cite_start]**Transverse braces shape:** Il programma ammette forma trapezia e parabolica[cite: 175]. [cite_start]La forma trapezia copre anche forme rettangolari, quadrate e triangolari, a seconda della base minore[cite: 176, 179].
-    * [cite_start]**Base max (B):** Dimensione della base incollata sulla tavola[cite: 182].
-    * **Base min (b):** Dimensione della base minore[cite: 186]. Se impostata a "1", la catena è pressoché triangolare; se uguale alla *Base max*, la sezione è rettangolare o quadrata[cite: 187, 188, 199].
-    * [cite_start]**Height (H):** Altezza in mm delle catene trapezie[cite: 200].
-* [cite_start]**Braces Material:** Il materiale delle catene può essere diverso da quello della soundboard, garantendo massima flessibilità[cite: 207, 210, 211].
+### SETTINGS
 
-![Diagramma Forma Catene](images/braces_shape.png)
-![Menu Braces UI](images/braces_menu.png)
+Il menù si trova in ogni pagina di Liutalab cliccando sui tre punti in alto a destra.
+
+* **Lenght units:** consigliamo di utilizzare il millimetro come unità principale di misura della lunghezza in modo da avere più precisione dopo il punto decimale.
+* **Theme:** riguarda l'aspetto della grafica, chiara o scura.
+
+![Immagine Settings e Menu Length units](images/settings_menu.png)
 
 ---
 
-### [cite_start]CARBON FIBER [cite: 225]
-[cite_start]Questo menù permette di gestire l'aggiunta di rinforzi (in fibra di carbonio o altri materiali resistenti) per aumentare la rigidezza flessionale senza appesantire troppo la struttura[cite: 225]. [cite_start]I rinforzi si intendono ricavati da laminati incollati alle catene[cite: 225].
+### OVERALL
 
-* [cite_start]**Brace reinforcement material:** Scegli il materiale dalla lista o inserisci un valore "by measure" dal datasheet[cite: 225].
-* **Reinforcement thickness on max base:** Spessore applicato tra soundboard e base delle catene (su tutte le catene)[cite: 225].
-* [cite_start]**Reinforcement thickness on min base:** Spessore incollato sopra la base minore[cite: 225]. [cite_start]*Nota: Incollare lo spessore sulla base minore è una modalità decisamente più efficace per aumentare la rigidezza[cite: 225].*
-* **Reinforcement thickness on each slope side:** Spessore applicato su entrambi i bordi delle catene trapezie (calcolato automaticamente due volte)[cite: 225].
+* **Board width:** larghezza della soundboard in mm misurata 50mm sopra il ponticello.
+* **Board thickness:** spessore della tavola armonica in mm con precisione al decimo di mm.
+* **Board material:** scegliendo il materiale della soundboard il programma applica il modulo elastico tabellare che trovate tra parentesi. E' possibile inserire il valore del modulo elastico "by measure" dopo averlo misurato sperimentalmente o evinto dalla certificazione del legno.
+* **Would do you like to craft Double top with honeycomb?:** se si desidera calcolare anche questa tipologia di tavola cliccare sul pulsante "Yes"; diversamente, lasciate sul default "No".
 
-![Menu Carbon Fiber UI](images/carbon_fiber_menu.png)
+Questa seconda parte di menù "overall" si attiva cliccando "Yes" alla casella "Would you like to craft Double Top with honeycomb?"
+
+* **Honeycomb Thikness:** si consideri lo spessore in mm con precisione al decimo di mm dell'honeycomb (tipicamente in materiale aramidico) posto tra la tavola superiore (specificata nella casella "Board thikness") e la "Inner soundboard thickness" (specificata sotto).
+* **Inner soundboard thikness:** è lo spessore della tavola incollata sotto la board e l'honeycomb.
+* **Board ratio:** è il rapporto tra la larghezza della inner soundboard e la larghezza della board della chitarra. Tipicamente è bene impostare questo numero a un valore inferiore ad 1 anche per considerare la riduzione dello spessore dell'honeycom ai bordi.
+* **Inner soundboard material:** il legno usato nella inner soundboard può essere diverso da quello usato nella board superiore. Scegliete quello del materiale utilizzato oppure inserite il valore misurato "by measure".
+
+![Immagini della schermata Overall del programma](images/overall_menu.png)
 
 ---
 
-### RESULTS [cite: 226]
+### BRACES
 
-* [cite_start]**Flexural rigidity:** Mostra i risultati di rigidezza flessionale della soundboard con catene e, se configurata, della variante double top[cite: 231]. [cite_start]Se il valore è superiore o inferiore al target, modifica i dati di progetto (spessori, materiali, dimensioni catene) per avvicinarti al valore desiderato[cite: 232, 233]. [cite_start]Il calcolo si aggiorna in automatico[cite: 234].
-* [cite_start]**Suggested flexural rigidity:** Mostra numeri di riferimento basati sullo strumento[cite: 248]. [cite_start]Non esiste un numero univocamente corretto, poiché varia a seconda dello spessore delle corde utilizzate[cite: 249].
+* **Braces number:** è il numero di catene che hanno uno scopo strutturale. Nel caso di Xbracing il valore è 2; nelle catene vented per chitarra classica può essere 5 o 7 a seconda della scelta costruttiva; nelle V type il numero è 2, nelle lattice dipende da quante catene intersecano il piano posto a 50mm sopra il ponticello (tipicamente 8), etc..
+* **Average braces orientation:** è l'angolo di inclinazione medio delle catene rispetto alle corde. Ad es. nell'Xbracing il valore sarà circa 35-45°, nelle vented sarà circa 5-10° etc..
+* **Transverse braces shape:** il programma ammette due tipologie di forma di bracing, quella trapezia e quella parabolica. In realtà la forma trapezia copre anche la forma rettangolare o quadrata come pure la triangolare, tutto dipende dalle dimensioni della base minore del trapezio.
+    * **Base max (B):** è la dimensione della base della catena trapezoidale incollata sulla tavola.
+    * **Base min (b):** è la dimensione della base minore del trapezio. Se questo valore è "1" allora avremmo delle catene di forma pressoché triangolare. Se il valore è uguale al valore di Base max allora avremo una sezione rettangolare o quadrata a seconda dell'altezza del trapezio.
+    * **Height (H):** altezza in mm delle catene trapezie.
+* **Braces Material:** in Liutalab è possibile definire il materiale delle catene che può essere diverso da quello della soundboard, questo per dare la massima flessibilità progettuale al liutaio.
 
-#### [cite_start]Deflection-based stiffness check [cite: 235]
-[cite_start]Sezione utile per la verifica strumentale della soundboard provvista di catene[cite: 241]. 
-[cite_start]Si procede appoggiando la soundboard su due supporti a distanza fissa (*Span length* o "L"), applicando un carico (*Load applied*) al centro, e misurando la deflessione (*Measured deflection*)[cite: 242, 244]. 
+![Immagine schema geometrico del trapezio della catena](images/braces_shape.png)
+![Immagini della schermata Braces del programma](images/braces_menu.png)
 
-[cite_start]Il numero risultante è il valore di rigidezza flessionale effettivo[cite: 245]:
-* [cite_start]**Se è superiore all'obiettivo:** Riduci la sezione delle catene strutturali[cite: 245].
-* **Se è inferiore:** Aggiungi ulteriori rinforzi[cite: 245].
+---
 
-![Diagramma Deflection Check](images/deflection_check.png)
-![Menu Results UI](images/results_menu.png)
+### CARBON FIBER
+
+In questo menù si può gestire l'eventuale aggiunta di rinforzi in fibra di carbonio, o altro materiale più resistente del legno di base, in modo da aumentare in maniera sostanziale la rigidezza flessionale senza appesantire troppo la struttura. Questi rinforzi si intendono ricavati da laminati (epoxy+fiber p.e.) di spessore calibrato (non fibre sciolte) incollate alle catene.
+
+* **Brace reinforcement material:** nella lista si può scegliere il materiale tra quelli presenti nella lista oppure si può inserire un valore "by measure" sulla base dei dati del materiale di rinforzo rintracciabili nel datasheet del produttore.
+* **Reinforcement thickness on max base:** inserire lo spessore di rinforzo applicato tra la soundboard e le basi delle catene (trapezie). Fate attenzione perchè si intende uno spessore applicato alla base di tutte le catene di larghezza pari alla base della catena trapezia.
+* **Reinforcement thickness on min base:** è lo spessore di rinforzo incollato sopra la base minore del trapezio di larghezza pari alla larghezza della base minore del trapezio. Da notare come incollare lo spessore sulla base minore piuttosto che sulla base maggiore, sia una modalità decisamente più efficace per aumentare la rigidezza della struttura.
+* **Reinforcement thickness on each slope side:** è lo spessore di rinforzo applicato su entrambi i bordi delle catene trapezie. Questo significa che il valore di spessore che si inserisce viene automaticamente calcolato due volte su tutte le catene.
+
+![Immagine della schermata Carbon Fiber del programma](images/carbon_fiber_menu.png)
+
+---
+
+### RESULTS
+
+* **Flexural rigidity:** sono i risultati di rigidezza flessionale rispettivamente della soundboard comprensiva di catene e della soundboard di tipo double top, se si è deciso di calcolarla nel menù apposito. I numeri che si vedono sono il risultato dei calcoli ottenuti con i valori geometrici e di resistenza (E) inseriti. A seconda che il valore di El sia superiore o inferiore a quello che consideriamo corretto, per avvicinarsi il più possibile è sufficiente modificare i dati numerici inseriti (ad es. misura e numero catene, spessore tavola, materiali utilizzati, etc..). Il calcolo della rigidezza flessionale viene aggiornato automaticamente rientrando nel menù results.
+
+**Deflection-based stiffness check:** questa sezione è particolarmente utile per la verifica strumentale della soundboard provvista di catene dopo aver calcolato e dimensionato tavola e catene. In pratica si procede appoggiando la soundboard su due supporti posti ad una certa distanza ("L" span lenght), applicando un precarico e un carico (load applied) nel centro della tavola e misurando la deflessione (measured deflection) sotto al carico secondo lo schema riportato in figura. Il numero risultante è il valore di rigidezza flessionale. Se questo numero è superiore al valore obiettivo si andrà a ridurre la sezione delle catene strutturali fino a raggiungere il dato desiderato, se è invece inferiore bisognerà aggiungere dei rinforzi ulteriori alla soundboard.
+
+* **Suggested flexural rigidity:** Quelli indicati sono numeri di riferimento che si utilizzeranno a seconda dello strumento che si andrà a progettare. Sottolineiamo che non esiste un numero corretto di rigidezza specifico per ogni strumento perché questo numero potrebbe variare a seconda dello spessore delle corde utilizzate.
+
+![Immagine Deflection Check schema con supporto L e carico F](images/deflection_check.png)
+![Immagini della schermata Results e Reference values del programma](images/results_menu.png)
