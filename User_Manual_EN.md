@@ -65,7 +65,8 @@ The menu can be found on every Liutalab page by clicking on the three dots at th
 * **Length units:** We recommend using millimeters as the main unit of length measurement to ensure greater precision after the decimal point.
 * **Theme:** concerns the appearance of the graphics, light or dark.
 
-![Settings Menu and Length Units](images/settings_menu.png)
+![Immagine Settings e Menu Length units](images/settings.png) ![Immagine Settings e Menu Length units](images/length_units.png)
+
 
 ---
 
@@ -83,7 +84,7 @@ This second part of the "overall" menu is activated by clicking "Yes" to the box
 * **Board ratio:** This is the ratio between the width of the inner soundboard and the width of the guitar board. It's typically best to set this number less than 1, also to account for the reduction in the thickness of the honeycomb at the edges.
 * **Inner soundboard material:** The wood used for the inner soundboard may be different from that used for the upper board. Choose the material used or enter the value measured "by measure."
 
-![Overall Menu Screenshots](images/overall_menu.png)
+![Immagini della schermata Overall del programma](images/overall.png) ![Immagini della schermata Overall del programma](images/honeycomb.png)
 
 ---
 
@@ -97,8 +98,9 @@ This second part of the "overall" menu is activated by clicking "Yes" to the box
     * **Height (H):** height in mm of the trapezoidal braces.
 * **Braces Material:** in Liutalab it is possible to define the material of the braces, which can be different from that of the soundboard, to give the luthier maximum design flexibility.
 
-![Trapezoidal Brace Shape Diagram](images/braces_shape_diagram.png)
-![Braces Menu Screenshots](images/braces_menu.png)
+![Immagine schema geometrico del trapezio della catena](images/brace1.png)
+![Immagini della schermata Braces del programma](images/brace2.png)
+
 
 ---
 
@@ -111,7 +113,7 @@ This menu allows you to manage the possible addition of carbon fiber reinforceme
 * **Reinforcement thickness on min base:** This is the thickness of reinforcement glued above the smaller base of the trapezoid, with a width equal to the width of the smaller base of the trapezoid. Note that gluing the thickness to the smaller base rather than the larger base is a much more effective way to increase the rigidity of the structure.
 * **Reinforcement thickness on each slope side:** This is the reinforcement thickness applied to both edges of the trapezoidal braces. This means that the thickness value you enter is automatically calculated twice for all braces.
 
-![Carbon Fiber Menu Screenshot](images/carbon_fiber_menu.png)
+![Immagine della schermata Carbon Fiber del programma](images/carbon.png)
 
 ---
 
@@ -123,6 +125,6 @@ This menu allows you to manage the possible addition of carbon fiber reinforceme
 
 * **Suggested flexural rigidity:** These are reference numbers that will be used depending on the instrument being designed. Please note that there is no specific correct stiffness number for every instrument, as this number may vary depending on the thickness of the strings used.
 
-![Deflection Check Setup Diagram](images/deflection_check_diagram.png)
-![Results Menu and Suggested Rigidity Table](images/results_menu.png)
-![Suggested Rigidity Reference Values](images/suggested_rigidity_table.png)
+![Immagine Deflection Check schema con supporto L e carico F](images/results1.png)
+![Immagini della schermata Results e Reference values del programma](images/results1.png)
+![Immagini della schermata Results e Reference values del programma](images/results3.png)
